@@ -140,26 +140,59 @@ body {
 }
 .topright {
   position: absolute;
-  top: 8px;
+  top: 0px;
   right: 16px;
   font-size: 18px;
 }
+
 .dark-mode {
   background-color: white;
+  color: black;
   content: 'whatever it is you want to add';
 }
 
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
 </style>
 <link href="style.scss" rel="stylesheet/scss" type="text/css">
 <link href="style.css" rel="stylesheet/scss" type="text/css">
 </head>
 <body>
-    <div class="svg">
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="Game.php">LogIn</a>
+    <a href="#contacts">contacts</a>
     <div class="topright"><button class="button button2" onclick="myFunction231()">Light Mode</button></div>
-    <div class="container">
-<br>
-        <audio controls id="audio" preload="none" tabindex="0">
+  </div>
+  <br><br>
+    <div class="svg">
+    <br><audio controls id="audio" preload="none" tabindex="0">
                       <source src="[YT2mp3.info] - Vierre Cloud - moment (Official Audio) (320kbps).mp3" data-track-number="1" />
                       <source src="[YT2mp3.info] - Snowman - Sia (Sped up and pitched) (320kbps).mp3" data-track-number="2" />
                       <source src="[YT2mp3.info] - my ordinary life - the living tombstone (sped up_nightcore) (320kbps).mp3" data-track-number="3" />
@@ -410,7 +443,9 @@ body {
           </div>
         </div>
 <script>
-
+function myFunction(x) {
+  x.classList.toggle("change");
+}
 
 var audioPlayer = function() {
   "use strict";
